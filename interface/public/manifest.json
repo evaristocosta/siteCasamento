@@ -1,0 +1,8 @@
+{
+  "short_name": "Casamento Ana e Lucas",
+  "name": "Site de Casamento de Ana e Lucas",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
