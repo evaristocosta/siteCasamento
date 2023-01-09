@@ -1,0 +1,29 @@
+@import '../index.scss';
+
+.principal {
+  background: url(../assets/fundoMobile1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  .fundo {
+    background-color: rgba($color: $amendoaBranqueada, $alpha: 0.7);
+    height: 100%;
+  }
+
+  .conteudo {
+    header {
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+      .titulo {
+        font-family: 'Halimun', cursive;
+        font-size: 28px;
+      }
+      .data {
+        font-family: 'Arapey', serif;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
