@@ -8,7 +8,7 @@ import { FiGift, FiCheck, FiMapPin } from 'react-icons/fi';
 
 function Mobile() {
   return (
-    <div className="principal">
+    <div className="mobile">
       <div className="background">
         <img src={fundoMobile1} alt="Fundo do site" />
       </div>
