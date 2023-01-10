@@ -1,20 +1,41 @@
 @import '../index.scss';
 
 .principal {
-  background: url(../assets/fundoMobile1.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  .background {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    z-index: -999;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      min-width: 50%;
+      min-height: 50%;
+      max-height: 100vh;
+    }
+  }
+
   .fundo {
     background-color: rgba($color: $amendoaBranqueada, $alpha: 0.7);
-    height: 100%;
+    height: 100vh;
   }
 
   .conteudo {
     header {
       color: white;
       text-align: center;
-      padding-top: 60px;
+      padding-top: 40px;
+      img {
+        max-width: 100px;
+      }
       .titulo {
         font-family: 'Halimun', cursive;
         font-size: 28px;
@@ -23,6 +44,99 @@
         font-family: 'Arapey', serif;
         font-size: 20px;
         text-transform: uppercase;
+      }
+    }
+
+    .itens {
+      width: 100%;
+      .item {
+        position: absolute;
+        right: 50%;
+        transform: translate(50%, 0);
+        display: grid;
+        justify-items: center;
+
+        .bola {
+          width: 120px;
+          height: 120px;
+          border-radius: 9999px;
+          background-color: white;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+          justify-content: center;
+          align-items: center;
+          display: flex;
+
+          .icone {
+            color: $verdeOlivaEscuro;
+            width: 80px;
+            height: 80px;
+            stroke-width: 1px;
+          }
+        }
+        .texto {
+          background-color: $verdeOlivaEscuro;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          color: white;
+          padding: 6px 10px;
+          margin-top: -8px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .presentes {
+        top: 25%;
+        z-index: 100;
+      }
+
+      /* .presenca {
+        top: 50%;
+      } */
+
+      /* .guia {
+        top: 75%;
+      } */
+
+      .presenca {
+        right: 30%;
+        z-index: 50;
+      }
+      .guia {
+        right: 18%;
+        z-index: 10;
+      }
+      .presenca,
+      .guia {
+        top: 27%;
+        .bola {
+          width: 60px;
+          height: 60px;
+          .icone {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .texto {
+          display: none;
+        }
+      }
+    }
+
+    .quadro {
+      margin: 0 auto;
+      margin-top: 100px;
+      max-width: 80%;
+      background-color: $amendoaBranqueada;
+      opacity: 0.9;
+      padding: 90px 18px 20px 18px;
+
+      .quadro-conteudo {
+        font-family: 'Arapey', serif;
+        font-size: 16px;
+        line-height: 140%;
+        color: $verdeOlivaEscuro;
+        text-align: center;
       }
     }
   }
