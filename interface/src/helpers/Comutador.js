@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Desktop from '../../pages/Desktop';
-import Mobile from '../../pages/Mobile';
+import Desktop from '../pages/Desktop';
+import Mobile from '../pages/Mobile';
 
-function Switch() {
+function Comutador() {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -18,4 +18,4 @@ function Switch() {
   return width <= 500 ? <Mobile /> : <Desktop />;
 }
 
-export default Switch;
+export default Comutador;

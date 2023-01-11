@@ -1,52 +1,12 @@
-@import '../index.scss';
+@import '../../index.scss';
 
 .mobile {
-  .background {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-
-    z-index: -999;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      min-width: 50%;
-      min-height: 50%;
-      max-height: 100vh;
-    }
-  }
-
   .fundo {
     background-color: rgba($color: $amendoaBranqueada, $alpha: 0.7);
     height: 100vh;
   }
 
   .conteudo {
-    header {
-      color: white;
-      text-align: center;
-      padding-top: 40px;
-      img {
-        max-width: 100px;
-      }
-      .titulo {
-        font-family: 'Halimun', cursive;
-        font-size: 28px;
-      }
-      .data {
-        font-family: 'Arapey', serif;
-        font-size: 20px;
-        text-transform: uppercase;
-      }
-    }
-
     .itens {
       width: 100%;
       .item {
@@ -90,24 +50,23 @@
         z-index: 100;
       }
 
-      /* .presenca {
-        top: 50%;
-      } */
-
-      /* .guia {
-        top: 75%;
-      } */
-
       .presenca {
+        top: 50%;
+      }
+
+      .guia {
+        top: 75%;
+      }
+
+      .primeiro-direita {
         right: 30%;
         z-index: 50;
       }
-      .guia {
+      .segundo-direita {
         right: 18%;
         z-index: 10;
       }
-      .presenca,
-      .guia {
+      .bolas-topo {
         top: 27%;
         .bola {
           width: 60px;
@@ -140,4 +99,8 @@
       }
     }
   }
+}
+
+.escondido {
+  display: none;
 }
