@@ -50,7 +50,7 @@ function MobileComponents() {
             </div>
           </div>
 
-          <div className={'quadro ' + (!abrePresentes && 'escondido')}>
+          <div className={'quadro ' + (!abrePresentes && 'quadro-escondido')}>
             <div className="quadro-conteudo">
               <p>
                 Querido convidado, seja bem-vindo a nossa lista de presentes!
