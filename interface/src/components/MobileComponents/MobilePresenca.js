@@ -4,7 +4,12 @@ function MobilePresenca() {
   return (
     <div>
       <p>
-        Querido convidado, Aqui você confirma a sua presença e de seus
+        Querido convidado! Em breve você poderá confirmar a sua presença. Te
+        avisaremos quando estiver disponível!
+      </p>
+
+      {/* <p>
+        Querido convidado, aqui você confirma a sua presença e de seus
         acompanhantes!
       </p>
       <div className="formulario">
@@ -41,7 +46,7 @@ function MobilePresenca() {
         </div>
 
         <button className="confirmacao">Confirmar</button>
-      </div>
+      </div> */}
     </div>
   );
 }

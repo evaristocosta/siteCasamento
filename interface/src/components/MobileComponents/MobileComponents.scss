@@ -16,6 +16,12 @@
         display: grid;
         justify-items: center;
 
+        transition: $tempoTransicao filter;
+
+        &:active {
+          filter: brightness(2);
+        }
+
         .bola {
           width: 120px;
           height: 120px;
@@ -141,7 +147,7 @@
         }
 
         .sub {
-          font-size: 12px;
+          font-size: 13px;
         }
 
         .linha {
@@ -266,7 +272,7 @@
       }
     }
     .quadro-escondido {
-      margin-top: 999px;
+      opacity: 0;
     }
   }
 }
