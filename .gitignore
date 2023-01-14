@@ -154,6 +154,8 @@ psd
 thumb
 sketch
 
+build/
+
 ### Sass ###
 .sass-cache/
 *.css.map

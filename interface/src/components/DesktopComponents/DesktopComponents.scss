@@ -19,7 +19,7 @@
       margin: auto;
       min-width: 50%;
       min-height: 50%;
-      max-width: 100vw;
+      max-height: 100vw;
     }
   }
 
@@ -44,6 +44,30 @@
         font-family: 'Arapey', serif;
         font-size: 28px;
         text-transform: uppercase;
+      }
+    }
+
+    .centro {
+      text-align: center;
+
+      .texto-centro {
+        width: fit-content;
+        margin: 40px auto;
+
+        h1 {
+          font-family: 'Arapey', serif;
+          background-color: $verdeOlivaEscuro;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          color: white;
+          padding: 6px 20px;
+        }
+      }
+
+      img {
+        max-width: 20%;
+        border: 8px solid white;
+        /* border-radius: 40px; */
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
   }
