@@ -155,6 +155,7 @@ thumb
 sketch
 
 build/
+server/src/public/
 
 ### Sass ###
 .sass-cache/

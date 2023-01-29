@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "postbuild": "rm -f -r ../server/src/public && mkdir ../server/src/public && cp -r build/* ../server/src/public/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
