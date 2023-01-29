@@ -17,6 +17,15 @@ function MobilePresentes() {
         Clique aqui para acessar a lista
       </a>
       <p>Código: 24761749-1</p>
+
+      <p style={{ fontWeight: 'bold' }}>OU</p>
+
+      <p>
+        Caso prefira nos presentear com um pix de casamento,{' '}
+        <a href="https://nubank.com.br/pagar/pe1ow/cqrp4pGmmN">
+          pode clicar neste link.
+        </a>
+      </p>
     </div>
   );
 }
