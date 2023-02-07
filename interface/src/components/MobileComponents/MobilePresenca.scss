@@ -1,0 +1,144 @@
+@import './MobileComponents.scss';
+
+.carregando {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.observacao {
+  margin-top: 12px;
+}
+
+.formulario {
+  width: 100%;
+  text-align: start;
+
+  .label {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 12px;
+  }
+
+  .pesquisa {
+    padding: 12px;
+    background-color: white;
+    border: 1px solid $verdeOlivaEscuro;
+    color: $mogno;
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: 'Arapey', serif;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $mogno;
+      opacity: 0.5;
+    }
+  }
+
+  .area-confirmacao {
+    padding: 12px;
+    background-color: white;
+    border: 1px solid $verdeOlivaEscuro;
+    color: $mogno;
+    width: 100%;
+    box-sizing: border-box;
+
+    .minimo-letras {
+      font-style: italic;
+      opacity: 0.5;
+    }
+
+    .item-confirmacao {
+      display: flex;
+      margin-bottom: 8px;
+      label {
+        margin-left: 8px;
+      }
+      input[type='checkbox'] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        /* Remove most all native input styles */
+        appearance: none;
+        /* For iOS < 15 */
+        background-color: var(--form-background);
+        /* Not removed via appearance */
+        margin: 0;
+
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        display: grid;
+        place-content: center;
+      }
+
+      input[type='checkbox']::before {
+        content: '';
+        width: 0.65em;
+        height: 0.65em;
+
+        transform: scale(0);
+        transform-origin: bottom left;
+
+        box-shadow: inset 1em 1em var(--form-control-color);
+        /* Windows High Contrast Mode */
+        background-color: $verdeOlivaEscuro;
+      }
+
+      input[type='checkbox']:checked::before {
+        transform: scale(1);
+      }
+
+      input[type='checkbox']:focus {
+        outline: max(2px, 0.15em) solid currentColor;
+        outline-offset: max(2px, 0.15em);
+      }
+    }
+  }
+
+  .confirmacao {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    color: white;
+    font-family: 'Arapey', serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px 0;
+    margin-top: 8px;
+  }
+
+  .confirmacao-0 {
+    background-color: $mogno;
+    transition: background-color $tempoTransicao;
+  }
+
+  .confirmacao-1 {
+    background-color: $verdeOlivaEscuro;
+    transition: background-color $tempoTransicao;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1);
+    }
+
+    &:active {
+      filter: brightness(1.1);
+    }
+  }
+
+  .confirmacao-2 {
+    background-color: $verdeEscuro;
+    transition: background-color $tempoTransicao;
+  }
+
+  .confirmacao-3 {
+    background-color: $verdeOlivaEscuro;
+    filter: brightness(1.1);
+    transition: background-color $tempoTransicao;
+  }
+}

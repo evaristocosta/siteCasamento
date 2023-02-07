@@ -9,11 +9,14 @@ const connection = mysql.createConnection({
 });
 
 functions.get('/convidados', (_req, res) => {
-  connection.query('select * from convidados', function (error, results) {
-    if (error) res.status(500).json(error);
+  connection.query(
+    `select *, lower(REGEXP_REPLACE(nome, '[^\\x20-\\x7E]', '')) as nome_limpo from convidados`,
+    function (error, results) {
+      if (error) res.status(500).json(error);
 
-    res.status(200).json(results);
-  });
+      res.status(200).json(results);
+    }
+  );
 });
 
 functions.get('/convidado/:id', (req, res) => {
@@ -26,35 +29,22 @@ functions.get('/convidado/:id', (req, res) => {
 });
 
 functions.put('/convidado/:id', (req, res) => {
-  const atualizar = req.body;
+  const confirmados = req.body.ids;
   const correlato = req.params.id;
 
   try {
-    const confirmados = atualizar
-      .filter((convidado) => convidado.confirmado === 1)
-      .map((convidado) => convidado.id);
-    const naoConfirmados = atualizar
-      .filter((convidado) => convidado.confirmado === 0)
-      .map((convidado) => convidado.id);
+    const queryNaoConfirmados = `update convidados set confirmado = 0 where id_correlato = ${correlato}`;
+
+    connection.query(queryNaoConfirmados, (error, _results) => {
+      if (error) throw error;
+    });
 
     const queryConfirmados = `update convidados set confirmado = 1 where id in (${confirmados.join(
       ','
     )}) and id_correlato = ${correlato}`;
 
-    connection.query(queryConfirmados, (error, results) => {
+    connection.query(queryConfirmados, (error, _results) => {
       if (error) throw error;
-
-      console.log(results);
-    });
-
-    const queryNaoConfirmados = `update convidados set confirmado = 0 where id in (${naoConfirmados.join(
-      ','
-    )}) and id_correlato = ${correlato}`;
-
-    connection.query(queryNaoConfirmados, (error, results) => {
-      if (error) throw error;
-
-      console.log(results);
     });
   } catch (error) {
     res.status(500).json(error);
