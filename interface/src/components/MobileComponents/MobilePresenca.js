@@ -164,7 +164,7 @@ function MobilePresenca() {
                 )}
               </>
             ) : (
-              <div className="minimo-letras">Digite pelo menos 3 letras...</div>
+              <div className="minimo-letras">Digite nome e sobrenome...</div>
             )}
           </div>
 
