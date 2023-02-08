@@ -1,8 +1,10 @@
 @import '../../index.scss';
 
+$tamanhoHorizontal: 5vw;
+
 .mobile {
   .fundo {
-    background-color: rgba($color: $amendoaBranqueada, $alpha: 0.7);
+    background-color: rgba($color: $amendoaBranqueada, $alpha: 0.6);
     height: 100vh;
   }
 
@@ -23,8 +25,8 @@
         }
 
         .bola {
-          width: 120px;
-          height: 120px;
+          width: calc(90px + $tamanhoHorizontal);
+          height: calc(90px + $tamanhoHorizontal);
           border-radius: 9999px;
           background-color: white;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -37,8 +39,8 @@
 
           .icone {
             color: $verdeOlivaEscuro;
-            width: 80px;
-            height: 80px;
+            width: calc(60px + $tamanhoHorizontal);
+            height: calc(60px + $tamanhoHorizontal);
             stroke-width: 1px;
 
             transition: all $tempoTransicao;
@@ -126,7 +128,7 @@
 
     .quadro {
       margin: 0 auto;
-      margin-top: 100px;
+      margin-top: 10vh;
 
       max-width: 80%;
       background-color: $amendoaBranqueada;

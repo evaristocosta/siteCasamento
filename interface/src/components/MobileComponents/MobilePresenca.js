@@ -6,6 +6,7 @@ import './MobilePresenca.scss';
 function MobilePresenca() {
   const [carregando, setCarregando] = useState(true);
   const [pesquisa, setPesquisa] = useState('');
+  const reg = /\s+\w/g;
   const [convidados, setConvidados] = useState([]);
   const [convidadosMarcados, setConvidadosMarcados] = useState([]);
 
@@ -33,7 +34,13 @@ function MobilePresenca() {
 
   const filtro = () => {
     const mestre = convidados.find((convidado) =>
-      convidado.nome_limpo.startsWith(pesquisa.toLowerCase().replace(' ', ''))
+      convidado.nome_limpo.startsWith(
+        pesquisa
+          .toLowerCase()
+          .replaceAll(' ', '')
+          .normalize('NFD')
+          .replaceAll(/[\u0300-\u036f]/g, '')
+      )
     );
 
     if (mestre) {
@@ -135,7 +142,7 @@ function MobilePresenca() {
           />
           <div className="label">Confirme a presença:</div>
           <div className="area-confirmacao">
-            {pesquisa.length >= 3 ? (
+            {pesquisa.match(reg) ? (
               <>
                 {filtro().length > 0 ? (
                   filtro().map((convidado) => (

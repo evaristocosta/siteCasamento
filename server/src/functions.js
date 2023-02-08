@@ -9,14 +9,20 @@ const connection = mysql.createConnection({
 });
 
 functions.get('/convidados', (_req, res) => {
-  connection.query(
-    `select *, lower(REGEXP_REPLACE(nome, '[^\\x20-\\x7E]', '')) as nome_limpo from convidados`,
-    function (error, results) {
-      if (error) res.status(500).json(error);
+  connection.query(`select * from convidados`, function (error, results) {
+    if (error) res.status(500).json(error);
 
-      res.status(200).json(results);
-    }
-  );
+    const resultsComNomeLimpo = results.map((result) => {
+      const nomeLimpo = result.nome
+        .toLowerCase()
+        .replaceAll(' ', '')
+        .normalize('NFD')
+        .replaceAll(/[\u0300-\u036f]/g, '');
+      return { nome_limpo: nomeLimpo, ...result };
+    });
+
+    res.status(200).json(resultsComNomeLimpo);
+  });
 });
 
 functions.get('/convidado/:id', (req, res) => {
